@@ -12,7 +12,15 @@
 UCLASS()
 class JIGSAWPUZZLE_API ACPP_CustomPlayerController : public APlayerController
 {
+
+	
 	GENERATED_BODY()
+
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
+	ACPP_CustomPlayerController* MyCustomController;
+
+
 
 	void SetOnBeginPlayer();
 	

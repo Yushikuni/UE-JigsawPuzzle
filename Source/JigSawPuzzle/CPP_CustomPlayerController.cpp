@@ -5,6 +5,13 @@
 
 void ACPP_CustomPlayerController::SetOnBeginPlayer()
 {
-	//Show mouse coursor
-	//Set Input mode UI only
+	
+	MyCustomController;
+
+	if (MyCustomController)
+	{
+		//Show mouse coursor
+		//MyCustomController->bShowMouseCursor(true);
+		//Set Input mode UI only	
+	}
 }
