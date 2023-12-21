@@ -5,13 +5,16 @@
 
 void ACPP_CustomPlayerController::SetOnBeginPlayer()
 {
-	
-	MyCustomController;
 
 	if (MyCustomController)
 	{
-		//Show mouse coursor
-		//MyCustomController->bShowMouseCursor(true);
-		//Set Input mode UI only	
+		// Show mouse cursor
+		MyCustomController->bShowMouseCursor = true;
+
+		// Set input mode UI only	
+		FInputModeUIOnly InputMode;
+		//InputMode.SetWidgetToFocus(/* Your UI Widget here */);
+		InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+		MyCustomController->SetInputMode(InputMode);
 	}
 }

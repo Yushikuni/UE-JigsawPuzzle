@@ -11,17 +11,18 @@
  */
 UCLASS()
 class JIGSAWPUZZLE_API ACPP_CustomPlayerController : public APlayerController
-{
-
-	
+{	
 	GENERATED_BODY()
 
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI/UX", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<class UUserWidget> bpMainWidget;
 
+protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	ACPP_CustomPlayerController* MyCustomController;
 
-
-
+public:
 	void SetOnBeginPlayer();
 	
 };
