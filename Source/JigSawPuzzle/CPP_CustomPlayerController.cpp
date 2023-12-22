@@ -3,18 +3,24 @@
 
 #include "CPP_CustomPlayerController.h"
 
+
 void ACPP_CustomPlayerController::SetOnBeginPlayer()
 {
 
 	if (MyCustomController)
 	{
-		// Show mouse cursor
-		MyCustomController->bShowMouseCursor = true;
+		bpMainWidget = CreateWidget<UUserWidget>(this, UUserWidget::StaticClass());
 
-		// Set input mode UI only	
-		FInputModeUIOnly InputMode;
-		//InputMode.SetWidgetToFocus(/* Your UI Widget here */);
-		InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-		MyCustomController->SetInputMode(InputMode);
+		if (bpMainWidget)
+		{
+			// Show mouse cursor
+			MyCustomController->bShowMouseCursor = true;
+
+			// Set input mode UI only	
+			FInputModeUIOnly InputMode;
+			InputMode.SetWidgetToFocus(bpMainWidget->TakeWidget());
+			InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+			MyCustomController->SetInputMode(InputMode);
+		}		
 	}
 }

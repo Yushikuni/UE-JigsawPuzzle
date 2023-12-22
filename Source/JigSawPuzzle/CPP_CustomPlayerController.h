@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
+#include "Blueprint/UserWidget.h"
 #include "CPP_CustomPlayerController.generated.h"
 
 /**
@@ -14,13 +15,12 @@ class JIGSAWPUZZLE_API ACPP_CustomPlayerController : public APlayerController
 {	
 	GENERATED_BODY()
 
-public:
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI/UX", meta = (AllowPrivateAccess = "true"))
-	TSubclassOf<class UUserWidget> bpMainWidget;
-
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	ACPP_CustomPlayerController* MyCustomController;
+		ACPP_CustomPlayerController* MyCustomController;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI/UX", meta = (AllowPrivateAccess = "true"))
+		UUserWidget* bpMainWidget;
 
 public:
 	void SetOnBeginPlayer();
