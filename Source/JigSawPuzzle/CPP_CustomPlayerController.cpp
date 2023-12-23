@@ -17,7 +17,7 @@ void ACPP_CustomPlayerController::SetOnBeginPlayer()
 			MyCustomController->bShowMouseCursor = true;
 
 			// Set input mode UI only	
-			FInputModeUIOnly InputMode;
+			FInputModeGameAndUI InputMode;
 			InputMode.SetWidgetToFocus(bpMainWidget->TakeWidget());
 			InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
 			MyCustomController->SetInputMode(InputMode);
